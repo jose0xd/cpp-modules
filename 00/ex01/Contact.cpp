@@ -21,7 +21,7 @@ void	Contact::fill_fields(void)
 {
 	for (int i = 0; !titles[i].empty(); i++)
 	{
-		std::cout << "Enter: " << titles[i] << std::endl;
+		std::cout << titles[i] << ": ";
 		std::getline(std::cin, fields[i]);
 	}
 }
@@ -40,6 +40,7 @@ void	Contact::print_full_name(void)
 
 void	Contact::print_all(void)
 {
+	std::cout << "\nCONTACT INFORMATION:\n";
 	for (int i = 0; !titles[i].empty(); i++)
 	{
 		std::cout << titles[i] << ": " << fields[i] << "\n";

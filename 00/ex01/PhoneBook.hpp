@@ -1,13 +1,18 @@
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
+# include <iostream>
 # include "Contact.hpp"
+
+# define MAX_STORE 8
 
 class PhoneBook
 {
 private:
-	Contact		contact[8];
-	static int	last;
+	Contact	contacts[MAX_STORE];
+	int		last;
+
+	void	make_room(void);
 
 public:
 	PhoneBook();
