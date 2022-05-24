@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 13:09:48 by jarredon          #+#    #+#             */
-/*   Updated: 2022/05/24 13:09:49 by jarredon         ###   ########.fr       */
+/*   Created: 2022/05/24 13:08:54 by jarredon          #+#    #+#             */
+/*   Updated: 2022/05/24 13:08:56 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ private:
 
 public:
 	Zombie(std::string name);
+	Zombie();
 	~Zombie();
 
 	void	announce( void );
