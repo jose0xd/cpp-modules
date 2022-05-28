@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 08:35:42 by jarredon          #+#    #+#             */
-/*   Updated: 2022/05/28 20:23:04 by jarredon         ###   ########.fr       */
+/*   Created: 2022/05/28 08:23:37 by jarredon          #+#    #+#             */
+/*   Updated: 2022/05/28 21:48:41 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Harl.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int main(void)
+# include <string>
+# include <iostream>
+
+class Harl
 {
-	Harl	boy;
+private:
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
+	int		get_key(std::string level);
 
-	std::cout << "Call DEBUG level:\n";
-	boy.complain("DEBUG");
-	std::cout << "\nCall INFO level:\n";
-	boy.complain("INFO");
-	std::cout << "\nCall WARNING level:\n";
-	boy.complain("WARNING");
-	std::cout << "\nCall ERROR Level:\n";
-	boy.complain("ERROR");
-	std::cout << "\nCall RANDOM level:\n";
-	boy.complain("RANDOM");
-}
+public:
+	Harl();
+	~Harl();
+	void	complain(std::string level);
+	void	filter(std::string level);
+};
+
+#endif
