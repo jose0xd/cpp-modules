@@ -5,25 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 13:15:02 by jarredon          #+#    #+#             */
-/*   Updated: 2022/05/28 09:11:27 by jarredon         ###   ########.fr       */
+/*   Created: 2022/05/28 08:35:42 by jarredon          #+#    #+#             */
+/*   Updated: 2022/05/28 09:03:26 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
+#include "Harl.hpp"
 
-int	main(void)
+int main(void)
 {
-	std::string	str = "HI THIS IS BRAIN";
-	std::string	*stringPTR = &str;
-	std::string	&stringREF = str;
+	Harl	boy;
 
-	std::cout << "Address of string variable: " << &str << "\n";
-	std::cout << "Address of stringPTR:       " << stringPTR << "\n";
-	std::cout << "Address of stringREF:       " << &stringREF << "\n\n";
-
-	std::cout << "Value of string variable: " << str << "\n";
-	std::cout << "Value of stringPTR:       " << *stringPTR << "\n";
-	std::cout << "Value of stringREF:       " << stringREF << "\n";
+	std::cout << "Call debug level:\n";
+	boy.complain("debug");
+	std::cout << "\nCall debug level:\n";
+	boy.complain("info");
+	std::cout << "\nCall warning level:\n";
+	boy.complain("info");
+	std::cout << "\nCall error level:\n";
+	boy.complain("info");
+	std::cout << "\nCall random level:\n";
+	boy.complain("random");
 }
