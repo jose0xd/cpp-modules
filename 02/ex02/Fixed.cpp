@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 20:28:06 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/08 08:52:33 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/08 10:16:38 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,38 @@ float	Fixed::toFloat(void) const
 int	Fixed::toInt(void) const
 {
 	return (number >> fract_bits);
+}
+
+Fixed	&Fixed::min(Fixed &left, Fixed &right)
+{
+	if (left <= right)
+		return (left);
+	else
+		return (right);
+}
+
+const Fixed	&Fixed::min(const Fixed &left, const Fixed &right)
+{
+	if (left <= right)
+		return (left);
+	else
+		return (right);
+}
+
+Fixed	&Fixed::max(Fixed &left, Fixed &right)
+{
+	if (left >= right)
+		return (left);
+	else
+		return (right);
+}
+
+const Fixed	&Fixed::max(const Fixed &left, const Fixed &right)
+{
+	if (left >= right)
+		return (left);
+	else
+		return (right);
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fx)

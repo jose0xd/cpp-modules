@@ -6,12 +6,12 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:11:08 by jarredon          #+#    #+#             */
-/*   Updated: 2022/05/24 13:11:13 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/08 10:05:31 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 # include <iostream>
 # include "Contact.hpp"

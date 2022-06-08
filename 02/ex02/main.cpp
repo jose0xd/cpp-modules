@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 22:02:09 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/08 08:49:22 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/08 10:11:57 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(void)
 
 	std::cout << b << std::endl;
 
-	//std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 
 	return (0);
 }

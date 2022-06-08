@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 20:19:23 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/08 08:30:33 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/08 10:16:53 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ public:
 	void	setRawBits(int const raw);
 	float	toFloat(void) const;
 	int		toInt(void) const;
+
+	static Fixed	&min(Fixed &left, Fixed &right);
+	static const Fixed	&min(const Fixed &left, const Fixed &right);
+	static Fixed	&max(Fixed &left, Fixed &right);
+	static const Fixed	&max(const Fixed &left, const Fixed &right);
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fx);
