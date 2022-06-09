@@ -6,13 +6,14 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:10:55 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/09 19:51:32 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/09 21:06:48 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
+//#include <cstdlib>
 
 int	main()
 {
@@ -33,4 +34,5 @@ int	main()
 		else
 			std::cout << "Invalid command. Try again\n";
 	}
+	//system("leaks phonebook");
 }
