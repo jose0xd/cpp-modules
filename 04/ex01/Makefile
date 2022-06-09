@@ -1,7 +1,8 @@
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp main.cpp
+SRC = Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp \
+	  Brain.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 NAME = main
