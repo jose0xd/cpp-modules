@@ -6,17 +6,20 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 00:38:10 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/09 00:56:59 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/09 10:56:03 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
-	ClapTrap a = ClapTrap("One");
-	ClapTrap b = ClapTrap("Two");
+	ScavTrap a("One");
+	ScavTrap b("Two");
+	ScavTrap c;
+	c = a;
 
+	a.guardGate();
 	a.attack("Two");
 	b.takeDamage(a.get_attack_damage());
 	b.beRepaired(1);
@@ -24,6 +27,7 @@ int	main(void)
 	for (int i = 0; i < 10; i++)
 	{
 		a.attack("Two");
+		b.takeDamage(a.get_attack_damage());
 		b.beRepaired(1);
 	}
 	a.print();

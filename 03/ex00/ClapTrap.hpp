@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 00:02:57 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/09 00:49:56 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/09 10:51:11 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ private:
 	int			hit_pts;
 	int			energy_pts;
 	int			attack_damage;
+
+	int			cannot_do();
 
 public:
 	ClapTrap();
