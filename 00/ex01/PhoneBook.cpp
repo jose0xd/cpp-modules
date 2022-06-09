@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:11:02 by jarredon          #+#    #+#             */
-/*   Updated: 2022/05/24 13:11:03 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/09 20:39:37 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,13 @@ void	PhoneBook::make_room(void)
 
 void	PhoneBook::add_contact(void)
 {
+	Contact	tmp;
+
+	if (tmp.fill_fields())
+		return ;
 	if (last >= MAX_STORE)
 		PhoneBook::make_room();
-	contacts[last].fill_fields();
+	contacts[last] = tmp;
 	last++;
 }
 
@@ -52,8 +56,10 @@ void	PhoneBook::search_contact(void)
 	}
 	std::cout << "\nIntroduce index of entry to display: ";
 	std::cin >> i;
-	if (i < 0 || i >= last)
+	if (std::cin.fail() || i < 0 || i >= last)
 	{
+		std::cin.clear();
+		std::cin.ignore(256, '\n');
 		std::cout << "Invalid index\n";
 		return ;
 	}

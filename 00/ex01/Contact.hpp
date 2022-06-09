@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:10:48 by jarredon          #+#    #+#             */
-/*   Updated: 2022/05/24 13:10:49 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/09 20:37:44 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	Contact();
 	~Contact();
 
-	void	fill_fields(void);
+	int		fill_fields(void);
 	void	print_full_name(void);
 	void	print_all(void);
 };
