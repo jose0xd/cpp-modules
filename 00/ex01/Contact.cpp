@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:10:40 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/09 20:37:29 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/10 11:18:05 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@ Contact::~Contact()
 {
 }
 
+static std::string	trim(std::string str)
+{
+	size_t	start = str.find_first_not_of(" \t");
+	size_t	end = str.find_last_not_of(" \t");
+	if (start == std::string::npos || end == std::string::npos)
+		return ("");
+	return (str.substr(start, end + 1 - start));
+}
+
 int	Contact::fill_fields(void)
 {
 	std::string	tmp[5];
@@ -37,6 +46,7 @@ int	Contact::fill_fields(void)
 	{
 		std::cout << titles[i] << ": ";
 		std::getline(std::cin, tmp[i]);
+		tmp[i] = trim(tmp[i]);
 		if (tmp[i].empty())
 		{
 			std::cout << "A saved contact can't have empty fields\n";

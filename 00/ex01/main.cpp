@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:10:55 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/09 21:06:48 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/10 11:23:06 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	main()
 		std::cout << "\nIntroduce a command (add, search or exit):\n";
 		std::cin >> command;
 		std::cin.ignore(256, '\n');
-		if (command == "add")
+		if (command == "add" || command == "ADD")
 			book.add_contact();
-		else if (command == "search")
+		else if (command == "search" || command == "SEARCH")
 			book.search_contact();
-		else if (command == "exit")
+		else if (command == "exit" || command == "EXIT")
 			break ;
 		else
 			std::cout << "Invalid command. Try again\n";
