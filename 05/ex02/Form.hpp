@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:21:12 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/13 18:18:20 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/14 08:08:50 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,18 @@ public:
 	void			beSigned(Bureaucrat &bcrat);
 	virtual void	execute(Bureaucrat const &executor) const = 0;
 
-	class GradeTooHighException;
-	class GradeTooLowException;
-	class NotSignedException;
+	class GradeTooHighException: public std::exception
+	{
+		virtual const char	*what() const throw();
+	};
+	class GradeTooLowException: public std::exception
+	{
+		virtual const char	*what() const throw();
+	};
+	class NotSignedException: public std::exception
+	{
+		virtual const char	*what() const throw();
+	};
 };
 
 std::ostream	&operator<<(std::ostream &out, const Form &obj);

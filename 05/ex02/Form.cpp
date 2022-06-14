@@ -6,35 +6,26 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:23:27 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/13 20:14:05 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/14 08:27:36 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-class Form::GradeTooHighException: public std::exception
+const char *Form::GradeTooHighException::what() const throw()
 {
-	virtual const char *what() const throw()
-	{
-		return ("Exception (Form): Grade is too high.\n");
-	}
-};
+	return ("Exception (Form): Grade is too high.\n");
+}
 
-class Form::GradeTooLowException: public std::exception
+const char *Form::GradeTooLowException::what() const throw()
 {
-	virtual const char *what() const throw()
-	{
-		return ("Exception (Form): Grade is too low.\n");
-	}
-};
+	return ("Exception (Form): Grade is too low.\n");
+}
 
-class Form::NotSignedException: public std::exception
+const char *Form::NotSignedException::what() const throw()
 {
-	virtual const char *what() const throw()
-	{
-		return ("Exception (Form): Not signed yet.\n");
-	}
-};
+	return ("Exception (Form): Not signed yet.\n");
+}
 
 Form::Form()
 	: is_signed(false), grade_to_sign(0), grade_to_execute(0)
@@ -85,11 +76,7 @@ void		Form::beSigned(Bureaucrat &bcrat)
 void	Form::execute(Bureaucrat const &executor) const
 {
 	if (!this->is_signed)
-	{
-		std::cout << "I`m going to throw the exception\n";
-		//throw Form::NotSignedException();
-		throw std::exception();
-	}
+		throw Form::NotSignedException();
 	else if (executor.getGrade() > this->grade_to_execute)
 		throw Form::GradeTooLowException();
 }

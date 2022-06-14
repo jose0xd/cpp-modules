@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 18:42:12 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/13 19:50:44 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/14 08:29:52 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 	Form::execute(executor);
 	std::cout << "Bip bop driiiing. Bzzzz ruuumbaaaa\n";
-	std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	if (std::rand() % 2)
 		std::cout << this->target << " has been robotomized successfully\n";
 	else

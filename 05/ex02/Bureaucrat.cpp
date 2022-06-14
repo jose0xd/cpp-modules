@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 12:12:54 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/13 18:15:31 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/14 08:21:21 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	Bureaucrat::executeForm(Form const &form)
 	}
 	catch (std::exception &e)
 	{
-		e.what();
+		std::cout << e.what();
 	}
 }
 
