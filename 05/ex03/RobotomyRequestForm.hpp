@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 18:35:28 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/14 20:20:25 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/15 18:35:33 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ public:
 
 	RobotomyRequestForm	&operator=(const RobotomyRequestForm &other);
 
-	void	execute(Bureaucrat const &executor) const;
-	Form	*clone(std::string target);
+	void		execute(Bureaucrat const &executor) const;
+	static Form	*clone(std::string target);
 };
 
 #endif

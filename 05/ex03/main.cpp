@@ -6,15 +6,16 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 12:37:33 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/13 20:15:17 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/15 18:42:35 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-#include <iostream>
+#include "Intern.hpp"
 
 int	main()
 {
@@ -64,4 +65,14 @@ int	main()
 	PresidentialPardonForm mike("Mike");
 	two.signForm(mike);
 	two.executeForm(mike);
+
+	std::cout << "\nIntern\n";
+	Intern	someRandomIntern;
+	Form	*rrf;
+
+	rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
+	two.signForm(*rrf);
+	two.executeForm(*rrf);
+
+	delete rrf;
 }

@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:50:24 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/14 20:30:35 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/15 12:30:58 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,8 @@
 class Intern
 {
 private:
-	std::string	form_types[] = {
-		"Presidential Pardon",
-		"Robotomy Request",
-		"Shrubbery Creation",
-		""
-	};
-
-	Form	*cloner[] = {
-		PresidentialPardonForm::clone,
-		RobotomyRequestForm::clone,
-		ShrubberyCreationForm::clone
-	};
+	static std::string	form_types[];
+	static Form	*(*cloner[])(std::string);
 
 public:
 	Intern();

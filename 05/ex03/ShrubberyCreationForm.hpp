@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:05:55 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/14 20:20:35 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/15 18:35:44 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ public:
 
 	ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &other);
 
-	void	execute(Bureaucrat const &executor) const;
-	Form	*clone(std::string target);
+	void		execute(Bureaucrat const &executor) const;
+	static Form	*clone(std::string target);
 };
 
 #endif

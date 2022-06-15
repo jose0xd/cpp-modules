@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 18:37:39 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/14 20:20:04 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/15 18:35:16 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ public:
 
 	PresidentialPardonForm	&operator=(const PresidentialPardonForm &other);
 
-	void	execute(Bureaucrat const &executor) const;
-	Form	*clone(std::string target);
+	void		execute(Bureaucrat const &executor) const;
+	static Form	*clone(std::string target);
 };
 
 #endif
