@@ -6,24 +6,12 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:09:35 by jarredon          #+#    #+#             */
-/*   Updated: 2022/05/24 13:09:36 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/17 19:17:51 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Zombie.hpp"
-
-Zombie*	newZombie( std::string name )
-{
-	return (new Zombie(name));
-}
-
-void	randomChump( std::string name )
-{
-	Zombie	zz = Zombie(name);
-
-	zz.announce();
-}
 
 int	main(void)
 {

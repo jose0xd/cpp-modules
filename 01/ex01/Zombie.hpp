@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:08:54 by jarredon          #+#    #+#             */
-/*   Updated: 2022/05/24 13:08:56 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/17 19:24:24 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,15 @@ private:
 	std::string	name;
 
 public:
-	Zombie(std::string name);
 	Zombie();
+	Zombie(std::string name);
 	~Zombie();
 
 	void	announce( void );
 };
+
+Zombie*	newZombie( std::string name );
+void	randomChump( std::string name );
+Zombie*	zombieHorde( int N, std::string name );
 
 #endif
