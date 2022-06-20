@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 20:28:06 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/08 12:58:49 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/20 14:31:03 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ Fixed::Fixed(const float n)
 {
 	//std::cout << "Float constructor called\n";
 	number = (int)roundf(n * (1 << fract_bits));
-	//number = roundf(n * (1 << fract_bits));
 }
 
 Fixed::~Fixed()
@@ -45,7 +44,7 @@ Fixed::~Fixed()
 Fixed &Fixed::operator=(const Fixed &other)
 {
 	//std::cout << "Copy assignment operator called\n";
-	number = other.getRawBits();
+	this->number = other.number;
 	return (*this);
 }
 
