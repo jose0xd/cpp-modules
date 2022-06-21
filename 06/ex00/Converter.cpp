@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 23:47:31 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/21 08:52:14 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/21 09:52:54 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	Converter::parse_characters()
 		type = tchar;
 		c_value = raw[0];
 	}
-	else if (len == 3 && raw[0] == '\'' && raw[0] == '\'')
+	else if (len == 3 && raw[0] == '\'' && raw[2] == '\'')
 	{
 		type = tchar;
 		c_value = raw[1];
@@ -57,12 +57,18 @@ void	Converter::parse_digit_type()
 		{
 			type = tdouble;
 			i++;
-			continue ;
 		}
 		if (raw[i] == 'f' && i == len - 1 && type == tdouble)
 		{
 			type = tfloat;
 			return ;
+		}
+		if (raw[i] == 'e' && i < len - 1)
+		{
+			type = tdouble;
+			i++;
+			if (raw[i] == '+' || raw[i] == '-')
+				i++;
 		}
 		if (!std::isdigit(raw[i]))
 		{
@@ -84,7 +90,8 @@ void	Converter::parse()
 		if (temp > std::numeric_limits<int>::max()
 			|| temp < std::numeric_limits<int>::min())
 			impossible[tint] = true;
-		i_value = temp;
+		else
+			i_value = temp;
 	}
 	else if (type == tdouble)
 		d_value = std::atof(raw.c_str());
@@ -94,7 +101,8 @@ void	Converter::parse()
 		if (temp > std::numeric_limits<float>::max()
 			|| temp < std::numeric_limits<float>::min())
 			impossible[tfloat] = true;
-		f_value = temp;
+		else
+			f_value = temp;
 	}
 }
 
@@ -122,13 +130,22 @@ void	Converter::convert()
 	{
 		c_value = static_cast<char>(f_value);
 		i_value = static_cast<int>(f_value);
+		if (f_value > std::numeric_limits<int>::max()
+			|| f_value < std::numeric_limits<int>::min())
+			impossible[tint] = true;
 		d_value = static_cast<double>(f_value);
 	}
 	else if (type == tdouble)
 	{
 		c_value = static_cast<char>(d_value);
 		i_value = static_cast<int>(d_value);
+		if (d_value > std::numeric_limits<int>::max()
+			|| d_value < std::numeric_limits<int>::min())
+			impossible[tint] = true;
 		f_value = static_cast<float>(d_value);
+		if (d_value > std::numeric_limits<float>::max()
+			|| d_value < std::numeric_limits<float>::min())
+			impossible[tfloat] = true;
 	}
 }
 
@@ -169,7 +186,7 @@ Converter	&Converter::operator=(const Converter &other)
 void	Converter::display()
 {
 	std::cout << "char: ";
-	if (impossible[tchar])
+	if (impossible[tchar] || i_value < 0 || i_value > 127)
 		std::cout << "impossible\n";
 	else if (std::isprint(c_value))
 		std::cout << "\'" << c_value << "\'\n";
