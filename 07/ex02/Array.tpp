@@ -27,6 +27,13 @@ Array<T>::~Array()
 }
 
 template <class T>
+const char	*Array<T>::OutOfBound::what() const throw()
+{
+	return ("Exception: index out of bounds");
+}
+
+
+template <class T>
 Array<T>	&Array<T>::operator=(const Array<T> &other)
 {
 	this->len = other.len;
@@ -40,7 +47,7 @@ template <class T>
 T	&Array<T>::operator[](unsigned int i)
 {
 	if (i > len)
-		throw std::exception();
+		throw Array::OutOfBound();
 	return (list[i]);
 }
 
@@ -48,7 +55,7 @@ template <class T>
 const T	&Array<T>::operator[](unsigned int i) const
 {
 	if (i > len)
-		throw std::exception();
+		throw Array::OutOfBound();
 	return (list[i]);
 }
 

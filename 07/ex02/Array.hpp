@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:21:04 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/21 17:28:57 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/22 15:56:39 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ public:
 	Array(unsigned int n);
 	Array(const Array &other);
 	~Array();
+
+	class OutOfBound: public std::exception {
+		virtual const char	*what() const throw();
+	};
 
 	Array			&operator=(const Array &other);
 	T				&operator[](unsigned int i);
