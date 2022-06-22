@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 12:50:41 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/09 16:33:15 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/22 15:38:18 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class DiamondTrap: public FragTrap, public ScavTrap
 {
 private:
 	std::string	name;
-	int			hit_pts;
-	int			energy_pts;
-	int			attack_damage;
+	int			&hit_pts;
+	int			&energy_pts;
+	int			&attack_damage;
 
 public:
 	DiamondTrap();

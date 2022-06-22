@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 01:18:47 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/09 16:36:05 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/22 15:34:58 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
 	ScavTrap(const ScavTrap &other);
 	~ScavTrap();
 
+	void		beRepaired(unsigned int amount);
 	void		attack(const std::string &target);
 	void		guardGate();
 };

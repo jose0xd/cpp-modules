@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 01:33:09 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/09 13:58:22 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/22 15:36:06 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,12 @@ ScavTrap::ScavTrap(const ScavTrap &other)
 ScavTrap::~ScavTrap()
 {
 	std::cout << " -Destructor of ScavTrap called\n";
+}
+
+void		ScavTrap::beRepaired(unsigned int amount)
+{
+	ClapTrap::beRepaired(amount);
+	this->energy_pts--;
 }
 
 void		ScavTrap::attack(const std::string &target)
