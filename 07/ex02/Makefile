@@ -14,11 +14,14 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CXX) $(OBJ) -o $(NAME)
 
+test: main2.o
+	$(CXX) main2.o -o test
+
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) main2.o
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) test
 
 re: fclean
 	$(MAKE)
