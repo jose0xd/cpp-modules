@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 01:12:32 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/22 16:45:39 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/28 00:49:03 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,14 @@ int	main()
 	n = easyfind(numbs, 5);
 	std::cout << "Element: " << *n << "\n";
 
+	// Return error value
 	n = easyfind(numbs, 6);
 	if (n != numbs.end())
 		std::cout << "Element: " << *n << "\n";
 	else
 		std::cout << "Element not found\n";
+
+	// Throw an exception
 	/*
 	try {
 		n = easyfind(numbs, 6);
