@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 21:41:22 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/09 22:03:30 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/27 12:55:56 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ protected:
 public:
 	Animal();
 	Animal(const Animal &other);
-	~Animal();
+	virtual ~Animal();
 
 	Animal		&operator=(const Animal &other);
 	std::string	getType() const;

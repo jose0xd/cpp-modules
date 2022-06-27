@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 22:14:44 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/09 22:19:19 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/27 12:57:50 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ protected:
 public:
 	WrongAnimal();
 	WrongAnimal(const WrongAnimal &other);
-	~WrongAnimal();
+	virtual ~WrongAnimal();
 
 	WrongAnimal		&operator=(const WrongAnimal &other);
 	std::string	getType() const;

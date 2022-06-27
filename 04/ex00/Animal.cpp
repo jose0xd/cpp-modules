@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 21:46:21 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/09 22:07:05 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/27 13:12:26 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,23 @@
 
 Animal::Animal()
 {
+	std::cout << "Animal default constructor\n";
 }
 
 Animal::Animal(const Animal &other)
 {
+	std::cout << "Animal copy constructor\n";
 	*this = other;
 }
 
 Animal::~Animal()
 {
+	std::cout << "Animal default destructor\n";
 }
 
 Animal	&Animal::operator=(const Animal &other)
 {
+	std::cout << "Animal assignment operator\n";
 	this->type = other.type;
 	return (*this);
 }

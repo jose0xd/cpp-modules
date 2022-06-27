@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:17:50 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/10 17:17:19 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:49:55 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class AMateria
 {
 protected:
-	std::string type;  //?
+	std::string type;
 
 public:
 	AMateria();

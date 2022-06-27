@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 22:57:44 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/09 23:28:36 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:29:36 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BRAIN_HPP
 
 # include <string>
+# include <iostream>
 
 class Brain
 {
@@ -27,6 +28,7 @@ public:
 
 	Brain		&operator=(const Brain &other);
 	std::string	get_idea(int index);
+	void		set_idea(int index, std::string str);
 };
 
 #endif

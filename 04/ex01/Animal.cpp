@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 21:46:21 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/09 23:31:38 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:29:02 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,28 @@
 
 Animal::Animal()
 {
+	std::cout << "Animal default constructor\n";
 	this->brain = new Brain();
 }
 
 Animal::Animal(const Animal &other)
 {
+	std::cout << "Animal copy constructor\n";
 	*this = other;
 }
 
 Animal::~Animal()
 {
+	std::cout << "Animal default destructor\n";
 	delete this->brain;
 }
 
 Animal	&Animal::operator=(const Animal &other)
 {
+	std::cout << "Animal assignment operator\n";
 	this->type = other.type;
+	this->brain = new Brain;
+	*this->brain = *other.brain;
 	return (*this);
 }
 
@@ -44,4 +50,14 @@ void	Animal::makeSound() const
 		std::cout << "Woof, woof\n";
 	else if (this->type == "Cat")
 		std::cout << "Meow, meow\n";
+}
+
+std::string	Animal::get_idea(int index)
+{
+	return (brain->get_idea(index));
+}
+
+void	Animal::set_idea(int index, std::string str)
+{
+	brain->set_idea(index, str);
 }
