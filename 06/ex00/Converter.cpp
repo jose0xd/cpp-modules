@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 23:47:31 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/21 09:52:54 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/27 20:42:29 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	Converter::parse_digit_type()
 			if (raw[i] == '+' || raw[i] == '-')
 				i++;
 		}
-		if (!std::isdigit(raw[i]))
+		if (i < len && !std::isdigit(raw[i]))
 		{
 			type = tindef;
 			return ;

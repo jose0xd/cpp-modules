@@ -6,7 +6,7 @@
 /*   By: jarredon <jarredon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 12:37:33 by jarredon          #+#    #+#             */
-/*   Updated: 2022/06/13 20:15:17 by jarredon         ###   ########.fr       */
+/*   Updated: 2022/06/27 21:21:46 by jarredon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	main()
 	std::cout << two;
 
 	std::cout << "\nFORM\n";
-	//ShrubberyCreationForm f1("target1");
 	ShrubberyCreationForm f2("target2");
 	std::cout << f2;
 
@@ -53,11 +52,7 @@ int	main()
 
 	RobotomyRequestForm robot("Machine");
 	std::cout << "\n**Trying to execute a form unsigned\n";
-	//try {
-		two.executeForm(robot);
-	//} catch (std::exception &e) {
-		//std::cout << e.what();
-	//}
+	two.executeForm(robot);
 	two.signForm(robot);
 	two.executeForm(robot);
 
